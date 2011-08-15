@@ -1,0 +1,39 @@
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/l9"]
+	path = bundle/l9
+	url = https://github.com/vim-scripts/L9.git
+[submodule "bundle/fuzzyfinder"]
+	path = bundle/fuzzyfinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "bundle/delimitmate"]
+	path = bundle/delimitmate
+	url = https://github.com/vim-scripts/delimitMate.vim.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = https://github.com/juvenn/mustache.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/vim-scripts/SuperTab-continued..git
+[submodule "bundle/transmit"]
+	path = bundle/transmit
+	url = https://github.com/tmallen/transmit-vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/les"]
+	path = bundle/les
+	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/less"]
+	path = bundle/less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/jquery"]
+	path = bundle/jquery
+	url = https://github.com/itspriddle/vim-jquery.git
