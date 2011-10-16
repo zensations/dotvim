@@ -1,1 +1,0 @@
-set fuopt+=maxhorz

@@ -18,7 +18,7 @@
 	url = https://github.com/juvenn/mustache.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = https://github.com/vim-scripts/SuperTab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/transmit"]
 	path = bundle/transmit
 	url = https://github.com/tmallen/transmit-vim.git
@@ -33,7 +33,7 @@
 	url = https://github.com/groenewege/vim-less.git
 [submodule "bundle/less"]
 	path = bundle/less
-	url = https://github.com/groenewege/vim-less.git
+	url = https://github.com/lunaru/vim-less.git
 [submodule "bundle/jquery"]
 	path = bundle/jquery
 	url = https://github.com/itspriddle/vim-jquery.git
@@ -55,3 +55,33 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/autotag"]
+	path = bundle/autotag
+	url = https://github.com/marcus/autotag.vim.git
+[submodule "bundle/project"]
+	path = bundle/project
+	url = https://github.com/shemerey/vim-project.git
+[submodule "bundle/indexer"]
+	path = bundle/indexer
+	url = https://github.com/shemerey/vim-indexer
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/css_color"]
+	path = bundle/css_color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle/css3"]
+	path = bundle/css3
+	url = https://hail2u@github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/coffeescript"]
+	path = bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git

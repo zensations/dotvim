@@ -1,54 +1,9 @@
-filetype off
+" PATHOGEN
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-call l9#defineVariableDefault('g:fuf_buffertag_ctagsPath'  , 'pctags')
-filetype plugin indent on
+" BEHAVIOR
 let mapleader = ","
-set tags+=~/Sites/tags
-" FuzzyFinder Keymaps
-nnoremap ,f :FufFile **/<CR>
-nnoremap ,t :FufBufferTag <CR>
-nnoremap ,b :FufBuffer <CR>
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" DRUPAL
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufNewFile,BufRead *.less set filetype=less
-    autocmd BufRead,BufNewFile *.css3 set filetype=css
-    autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType c set omnifunc=ccomplete#Complete
-  augroup END
-endif
-syntax on
-" colorscheme and font
-"let molokai_original=1
-"colorscheme molokai
-colorscheme solarized
-set background=light
-set gfn=Consolas:h14
-" add directories for ctags
-" set tags+=tags;$HOME/Sites
-set guioptions-=T
-set guioptions-=r
-set guioptions-=l
-set guioptions-=R
-set guioptions-=L
-set guioptions-=b
-set guioptions-=e
 set wrap
 set linebreak
 set nolist
@@ -57,7 +12,6 @@ set tabstop=2
 set shiftwidth=2
 set number
 set autoindent
-set smartindent
 set sm
 set expandtab
 set hlsearch
@@ -65,12 +19,21 @@ set incsearch
 set ruler
 set noswapfile
 set backspace=indent,eol,start
-set backupdir=~/.vimbackups
-set directory=~/.vimswaps
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 
-" ------------------------------------------------------------------
-" Solarized Colorscheme Config
-" ------------------------------------------------------------------
+" GENERAL APPEARANCE
+set gfn=Consolas\ for\ BBEdit:h14
+set guioptions-=T
+set guioptions-=r
+set guioptions-=l
+set guioptions-=R
+set guioptions-=L
+set guioptions-=b
+set statusline=%F%m%r%h%w\ %Y\ [%04v][%p%%]\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}
+set laststatus=2
+
+" Solarized
 let g:solarized_contrast="high"    "default value is normal
 let g:solarized_visibility="high"    "default value is normal
 let g:solarized_diffmode="high"    "default value is normal
@@ -79,5 +42,37 @@ syntax enable
 set background=light
 colorscheme solarized
 
-let g:delimitMate_expand_cr=1
-let g:delimitMate_expand_space=1
+" delimitMate
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:SuperTabCrMapping = 0
+
+" syntastic
+let g:syntastic_enable_signs=1
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+
+set tags=./tags;
+filetype plugin on
+filetype indent on
+let coffee_make_options = "--bare"
+" FILETYPES
+if has("autocmd")
+  augroup filetypes
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufNewFile,BufRead *.less set filetype=less
+    autocmd BufRead,BufNewFile *.css3 set filetype=css
+    autocmd BufRead,BufNewFile *.dss set filetype=css
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c set omnifunc=ccomplete#Complete
+    au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+  augroup END
+endif
