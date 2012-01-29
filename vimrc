@@ -1,9 +1,23 @@
+let g:syntastic_phpcs_disable=1
 " PATHOGEN
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
+" call add(g:pathogen_disabled, 'haml')
 call pathogen#infect()
+
+set foldcolumn=2
+set foldmethod=indent
+
+"nnoremap ,f :FufFile **/<CR>
+"nnoremap ,t :FufBufferTag <CR>
+"nnoremap ,b :FufBuffer <CR>
 
 " BEHAVIOR
 let mapleader = ","
+set vb
 set wrap
 set linebreak
 set nolist
@@ -30,7 +44,20 @@ set guioptions-=l
 set guioptions-=R
 set guioptions-=L
 set guioptions-=b
-set statusline=%F%m%r%h%w\ %Y\ [%04v][%p%%]\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}
+if has('statusline')
+  set laststatus=2
+  " Broken down into easily includeable segments
+  set statusline=%<%f\    " Filename
+  set statusline+=%w%h%m%r " Options
+  set statusline+=%{fugitive#statusline()} "  Git Hotness
+  set statusline+=\ [%{&ff}/%Y]            " filetype
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_enable_signs=1
+  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+
 set laststatus=2
 
 " Solarized
@@ -53,10 +80,11 @@ let g:syntastic_enable_signs=1
 " supertab
 let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 
+let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
 set tags=./tags;
 filetype plugin on
 filetype indent on
-let coffee_make_options = "--bare"
+set autoread
 " FILETYPES
 if has("autocmd")
   augroup filetypes
@@ -73,6 +101,7 @@ if has("autocmd")
     autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType c set omnifunc=ccomplete#Complete
-    au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+    "autocmd BufWritePost *.coffee silent !coffee -c %
+    "autocmd BufWritePost *.less silent exe '!lessc ' . shellescape(expand('<afile>')) . ' ' . shellescape(expand('<afile>:r')) . '.css'
   augroup END
 endif
