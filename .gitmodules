@@ -45,7 +45,7 @@
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "bundle/conque"]
 	path = bundle/conque
-	url = https://github.com/vim-scripts/Conque-Shell.git
+	url = https://github.com/rson/vim-conque.git
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
