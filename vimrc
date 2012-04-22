@@ -9,8 +9,13 @@ let g:pathogen_disabled = []
 call pathogen#infect()
 
 " fold based on 2 space indents
-set foldcolumn=2
+" set foldcolumn=2
 set foldmethod=indent
+
+" Taglist
+let Tlist_Use_Right_Window = 1
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
 
 " MAPLEADER
 let mapleader = ","
@@ -76,8 +81,6 @@ set background=light
 let g:solarized_contrast="high"    "default value is normal
 let g:solarized_visibility="high"    "default value is normal
 let g:solarized_diffmode="high"    "default value is normal
-let g:solarized_hitrail=1    "default value is 0
-
 
 " delimitMate
 let g:delimitMate_expand_cr = 1
