@@ -9,7 +9,7 @@ let g:pathogen_disabled = []
 call pathogen#infect()
 
 " fold based on 2 space indents
-set foldcolumn=2
+" set foldcolumn=2
 set foldmethod=indent
 
 " Taglist
