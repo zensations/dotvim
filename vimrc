@@ -8,10 +8,6 @@ let g:pathogen_disabled = []
 " start pathogen
 call pathogen#infect()
 
-" fold based on 2 space indents
-" set foldcolumn=2
-set foldmethod=indent
-
 " Taglist
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1
@@ -94,7 +90,7 @@ let g:syntastic_enable_signs=1 " gutter signs for syntastic errors
 let g:SuperTabDefaultCompletionType = "<C-x><C-o>" " map tab to omni complete
 
 " phpcs configuration for drupal
-let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
+let g:syntastic_phpcs_conf=" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme"
 
 set autoread " automatically read changed files from disk
 
